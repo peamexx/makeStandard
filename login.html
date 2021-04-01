@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <title>login</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+
+    <!-- script -->
+    <script src="script/script.js" defer></script>
+</head>
+<body>
+    <div id="login">
+        <div class="inner">
+            <div class="content">
+                <h3 class="title">로그인</h3>
+                <form action="" onSubmit="return false;">
+                    <fieldset>
+                        <legend class="hidden">로그인</legend>
+                        <div class="idArea">
+                            <label for="id">아이디</label>
+                            <input type="text" name="id" class="requiredY" autofocus="autofocus">
+                            <p class="error" aria-live="assertive"></p>
+                        </div>
+                        <div class="pwArea">
+                            <label for="pw">비밀번호</label>
+                            <input type="password" name="pw" class="requiredY">
+                            <p class="error" aria-live="assertive"></p>
+                        </div>
+                        <button type="submit" class="loginBtn">로그인</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

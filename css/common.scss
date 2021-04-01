@@ -1,0 +1,268 @@
+// Import
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap'); // 'Noto Sans KR', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap'); // 'Fira Mono', monospace;
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,700&display=swap');
+
+// Breakpoint variable
+$lg: 1200px;
+$md: 770px;
+$sm: 500px;
+
+// Color variable
+$white: rgb(255, 255, 255);
+$black: rgb(0, 0, 0);
+$gray: rgb(239, 239, 239);
+$darkgray: rgb(218, 218, 218);
+$point: rgb(14, 122, 254);
+$error: rgb(255, 0, 51);
+
+// Common class
+.on {
+    display: block !important;
+}
+
+.off {
+    display: none !important;
+}
+
+.pagOn {
+    color: $point;
+    font-weight: bold;
+}
+
+.error {
+    display: none;
+    margin-top: 10px;
+    text-align: left;
+    color: $error;
+    font-size: 0.9rem;
+}
+
+.hidden {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
+// Mixin
+@mixin ellipsis($lineCnt) {
+    display: -webkit-box;
+    -webkit-line-clamp: $lineCnt;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    word-wrap:break-word; 
+}
+
+@mixin resetStyle {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+}
+
+// Common css
+* {
+    font-family: 'Noto Sans KR', sans-serif !important;
+    box-sizing: border-box !important;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+// start
+#login {
+    width: 100%;
+    height: 100%;
+    background-color: $gray;
+    position: relative;
+    .inner {
+        width: $lg;
+        margin: auto;
+        .content {
+            width: 400px;
+            padding: 50px 20px;
+            background-color: $white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            .title {
+                text-align: center;
+                font: {
+                    size: 1.5rem;
+                    weight: bold;
+                }
+            }
+            form {
+                fieldset {
+                    padding: 0 20px;
+                    label {
+                        display: block;
+                        width: 100%;
+                        margin-top: 30px;
+                        margin-bottom: 10px;
+                    }
+                    input {
+                        display: block;
+                        width: 100%;
+                        padding: 10px;
+                        background-color: $white;
+                        border: 1px solid $darkgray;
+                        caret-color: $point;
+                        @include resetStyle;
+                    }
+                    .loginBtn {
+                        display: block;
+                        width: 100%;
+                        margin-top: 30px;
+                        padding: 20px;
+                        text-align: center;
+                        background-color: $point;
+                        color: $white;
+                        @include resetStyle;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: $md) {
+        .inner {
+            width: 100%;
+        }
+    }
+    @media screen and (max-width: $sm) {
+        .inner {
+            .content {
+                width: 100%;
+            }
+        }
+    }
+}
+
+#board {
+    width: 100%;
+    height: 100%;
+    .inner {
+        width: $lg;
+        margin: auto;
+        .content {
+            background-color: $white;
+            .tBoard {
+                width: 100%;
+                border-collapse: collapse;
+                tr {
+                    th, td {
+                        padding: 20px;
+                        text-align: center;
+                        vertical-align: middle;
+                        cursor: pointer;
+                        .chk {
+                            display: block;
+                            width: 20px;
+                            height: 20px;
+                            margin: auto;
+                        }
+                    }
+                    th {
+                        background-color: $point;
+                        color: $white;
+                        font-weight: bold;
+                    }
+                    td {
+                        border-bottom: 1px solid $gray;
+                        span {
+                            display: block;
+                        }
+                        .settingIcon {
+                            display: block;
+                            width: 50px;
+                            margin: auto;
+                        }
+                        .coinIcon {
+                            width: 20px;
+                        }
+                        .group,
+                        .txt {
+                            font: {
+                                size: 1.1rem;
+                                weight: bold;
+                            }
+                        }
+                        .group,
+                        .coinName,
+                        .txt {
+                            margin-bottom: 5px;
+                        }
+                        .coinName,
+                        .cpu,
+                        .gpu,
+                        .cpuCnt,
+                        .gpuCnt {
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+            .tPagination {
+                width: 50%;
+                margin: auto;
+                margin-top: 30px;
+                // background-color: greenyellow;
+                border-collapse: collapse;
+                td {
+                    padding: 20px 10px;
+                    border: 1px solid $gray;
+                    text-align: center;
+                    cursor: pointer;
+                    &:first-child,
+                    &:last-child {
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: $lg) {
+        .inner {
+            width: 100%;
+        }
+    }
+    @media screen and (max-width: $md) {
+        .inner {
+            .content {
+                .tPagination {
+                    width: 100%;
+                    td {
+                        padding: 15px;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: $sm) {
+        .inner {
+            .content {
+                .tBoard {
+                    width: 100%;
+                    tr {
+                        th, td {
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
