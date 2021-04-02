@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/common.css">
 
     <!-- script -->
-    <!-- <script src="script.js" defer></script> -->
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div id="join">
@@ -26,6 +26,7 @@
                             <div class="idArea">
                                 <label for="id"><span class="requiredSpan">아이디</span></label>
                                 <input type="text" name="id">
+                                <p class="error"></p>
                             </div>
                             <div class="pwArea">
                                 <label for="pw"><span class="requiredSpan">비밀번호</span></label>
@@ -40,14 +41,16 @@
                                     <li><b>10자</b> 이상</li>
                                 </ul>
                             </div>
-                            <div class="pwArea required">
+                            <div class="pwChkArea">
                                 <label for="pw"><span class="requiredSpan">비밀번호 확인</span></label>
                                 <input type="password" name="pw">
+                                <p class="error"></p>
                             </div>
                             <div class="phoneNumArea">
                                 <label for="phoneNum"><span class="requiredSpan">휴대폰번호</span></label>
                                 <input type="text" name="phoneNum">
                                 <p class="info">-는 빼고 입력해주세요(예: 01012345678)</p>
+                                <p class="error"></p>
                             </div>
                         </fieldset>
                     </form>

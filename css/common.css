@@ -260,6 +260,10 @@ html, body {
   right: -16px;
 }
 
+#join .inner .content > div form fieldset .error {
+  margin-left: 155px;
+}
+
 #board {
   width: 100%;
   height: 100%;
