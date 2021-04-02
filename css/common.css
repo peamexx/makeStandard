@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
@@ -96,6 +97,8 @@ html, body {
   background-color: white;
   border: 1px solid #dadada;
   caret-color: #0e7afe;
+  all: unset;
+  border: 1px solid #dadada;
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -112,6 +115,8 @@ html, body {
   text-align: center;
   background-color: #0e7afe;
   color: white;
+  all: unset;
+  border: 1px solid #efefef;
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -130,6 +135,129 @@ html, body {
   #login .inner .content {
     width: 100%;
   }
+}
+
+#join {
+  width: 100%;
+  height: 100%;
+  background-color: #efefef;
+  position: relative;
+}
+
+#join .inner {
+  width: 1200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+#join .inner .content {
+  padding: 50px;
+  background-color: white;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#join .inner .content > div {
+  margin-bottom: 50px;
+}
+
+#join .inner .content > div h3 {
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #efefef;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#join .inner .content > div .notice {
+  margin-bottom: 30px;
+  text-align: right;
+  color: #0e7afe;
+  font-size: 0.9rem;
+}
+
+#join .inner .content > div form fieldset > div {
+  width: 500px;
+  margin-bottom: 30px;
+}
+
+#join .inner .content > div form fieldset > div label {
+  display: inline-block;
+  width: 150px;
+  padding: 10px;
+}
+
+#join .inner .content > div form fieldset > div input {
+  all: unset;
+  border: 1px solid #dadada;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  width: 346px;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+#join .inner .content > div form fieldset > div input:focus {
+  border: 1px solid #0e7afe;
+}
+
+#join .inner .content > div form fieldset > div .info {
+  margin-top: 10px;
+  margin-left: 155px;
+  color: #777777;
+  font-size: 0.9rem;
+}
+
+#join .inner .content > div form fieldset > div:last-child {
+  margin-bottom: 0;
+}
+
+#join .inner .content > div form fieldset .pwCondition {
+  display: inline-block;
+  padding: 20px;
+  background-color: #efefef;
+  border: 1px solid #dadada;
+}
+
+#join .inner .content > div form fieldset .pwCondition li {
+  margin-left: 15px;
+  margin-bottom: 10px;
+  color: #777777;
+  font-size: 0.9rem;
+  list-style-type: disc;
+}
+
+#join .inner .content > div form fieldset .pwCondition li b {
+  font-weight: bold;
+}
+
+#join .inner .content > div form fieldset .pwCondition li:last-child {
+  margin-bottom: 0;
+}
+
+#join .inner .content > div form fieldset .requiredSpan {
+  position: relative;
+}
+
+#join .inner .content > div form fieldset .requiredSpan:after {
+  content: '※';
+  display: block;
+  color: #0e7afe;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 7px;
+  right: -16px;
 }
 
 #board {

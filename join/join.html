@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <title>join</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <!-- script -->
+    <!-- <script src="script.js" defer></script> -->
+</head>
+<body>
+    <div id="join">
+        <div class="inner">
+            <div class="content">
+                <div class="section1">
+                    <h3>본인 확인</h3>
+                    <p class="notice">※은 필수 입력 항목입니다.</p>
+                    <form action="" onsubmit="return false;">
+                        <fieldset>
+                            <legend class="hidden">본인 확인</legend>
+                            <div class="idArea">
+                                <label for="id"><span class="requiredSpan">아이디</span></label>
+                                <input type="text" name="id">
+                            </div>
+                            <div class="pwArea">
+                                <label for="pw"><span class="requiredSpan">비밀번호</span></label>
+                                <input type="password" name="pw">
+                            </div>
+                            <div class="pwCondition">
+                                <ul>
+                                    <li>영문 <b>대문자</b> 포함</li>
+                                    <li>영문 <b>소문자</b> 포함</li>
+                                    <li><b>숫자</b> 포함</li>
+                                    <li><b>특수문자</b> 포함(!,'," 제외)</li>
+                                    <li><b>10자</b> 이상</li>
+                                </ul>
+                            </div>
+                            <div class="pwArea required">
+                                <label for="pw"><span class="requiredSpan">비밀번호 확인</span></label>
+                                <input type="password" name="pw">
+                            </div>
+                            <div class="phoneNumArea">
+                                <label for="phoneNum"><span class="requiredSpan">휴대폰번호</span></label>
+                                <input type="text" name="phoneNum">
+                                <p class="info">-는 빼고 입력해주세요(예: 01012345678)</p>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="section2">
+                    <h3>약관 동의</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

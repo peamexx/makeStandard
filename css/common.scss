@@ -14,6 +14,7 @@ $white: rgb(255, 255, 255);
 $black: rgb(0, 0, 0);
 $gray: rgb(239, 239, 239);
 $darkgray: rgb(218, 218, 218);
+$darkestgray: rgb(119, 119, 119);
 $point: rgb(14, 122, 254);
 $error: rgb(255, 0, 51);
 
@@ -58,7 +59,9 @@ $error: rgb(255, 0, 51);
     word-wrap:break-word; 
 }
 
-@mixin resetStyle {
+@mixin resetStyle($borderColor) {
+    all: unset;
+    border: 1px solid $borderColor;
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -121,7 +124,7 @@ html, body {
                         background-color: $white;
                         border: 1px solid $darkgray;
                         caret-color: $point;
-                        @include resetStyle;
+                        @include resetStyle($darkgray);
                     }
                     .loginBtn {
                         display: block;
@@ -131,7 +134,7 @@ html, body {
                         text-align: center;
                         background-color: $point;
                         color: $white;
-                        @include resetStyle;
+                        @include resetStyle($gray);
                     }
                 }
             }
@@ -146,6 +149,108 @@ html, body {
         .inner {
             .content {
                 width: 100%;
+            }
+        }
+    }
+}
+
+#join {
+    width: 100%;
+    height: 100%;
+    background-color: $gray;
+    position: relative;
+    .inner {
+        width: $lg;
+        margin: auto;
+        overflow: hidden;
+        .content {
+            padding: 50px;
+            background-color: $white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            > div {
+                margin-bottom: 50px;
+                h3 {
+                    margin-bottom: 30px;
+                    padding-bottom: 15px;
+                    border-bottom: 1px solid $gray;
+                    font: {
+                        size: 1.5rem;
+                        weight: bold;
+                    }
+                }
+                .notice {
+                    margin-bottom: 30px;
+                    text-align: right;
+                    color: $point;
+                    font-size: 0.9rem;
+                }
+                form {
+                    fieldset {
+                        > div {
+                            width: 500px;
+                            margin-bottom: 30px;
+                            label {
+                                display: inline-block;
+                                width: 150px;
+                                padding: 10px;
+                            }
+                            input {
+                                @include resetStyle($darkgray);
+                                width: 346px;
+                                padding: 5px;
+                                border-radius: 3px;
+                                &:focus {
+                                    border: 1px solid $point;
+                                }
+                            }
+                            .info {
+                                margin-top: 10px;
+                                margin-left: 155px;
+                                color: $darkestgray;
+                                font-size: 0.9rem;
+                            }
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+                        .pwCondition {
+                            display: inline-block;
+                            padding: 20px;
+                            background-color: $gray;
+                            border: 1px solid $darkgray;
+                            li {
+                                margin-left: 15px;
+                                margin-bottom: 10px;
+                                color: $darkestgray;
+                                font-size: 0.9rem;
+                                list-style-type: disc;
+                                b {
+                                    font-weight: bold;
+                                }
+                                &:last-child {
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+                        .requiredSpan {
+                            position: relative;
+                            &:after {
+                                content: '※';
+                                display: block;
+                                color: $point;
+                                font-size: 0.8rem;
+                                position: absolute;
+                                top: 7px;
+                                right: -16px;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
