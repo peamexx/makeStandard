@@ -6,6 +6,7 @@ loginBtn.addEventListener('click', requireChk);
 // 필수 입력 요소 체크
 function requireChk() {
     requiredY.forEach((item) => {
+        item.closest('div').querySelector('.error').classList.remove('on');
         if(item.value === '') {
             let title = item.closest('div').querySelector('label').textContent;
             
