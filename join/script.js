@@ -3,18 +3,34 @@ let pwInput = document.querySelector('.pwArea').querySelector('input');
 let pwChkInput = document.querySelector('.pwChkArea').querySelector('input');
 let phoneNumInput = document.querySelector('.phoneNumArea').querySelector('input');
 
-// idInput.addEventListener('blur', pwChkFunc);
-pwInput.addEventListener('blur', pwFunc);
-pwChkInput.addEventListener('blur', pwChkFunc);
-phoneNumInput.addEventListener('blur', phoneNumFunc);
+idInput.addEventListener('keyup', idLowerChange);
+idInput.addEventListener('blur', idConditionChk);
+pwInput.addEventListener('blur', pwConditionChk);
+pwChkInput.addEventListener('blur', pwChkConditionChk);
+phoneNumInput.addEventListener('blur', phoneNumConditionChk);
 
 // https://regexr.com/
 
+// 아이디 체크 - 대문자 입력 시 소문자로
+function idLowerChange() {
+    idInput.value = idInput.value.toLocaleLowerCase();
+};
+
 // 아이디 체크
-// 나중에 하단 버튼 만들고 해야함
+function idConditionChk() {
+    let idError = document.querySelector('.idArea').querySelector('.error');
+    let idCondition = /^[a-z0-9]{6,8}$/;
+
+    if(!idInput.value.match(idCondition)) {
+        idError.classList.add('on');
+        idError.textContent = '영소문자 6~8자리를 입력해주세요.'
+    } else {
+        idError.classList.remove('on');
+    }
+}
 
 // 비밀번호 체크
-function pwFunc() {
+function pwConditionChk() {
     let pwError = document.querySelector('.pwArea').querySelector('.error');
     let pwCondition = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*\W).{8,10}$/;
     let pwConditionSymbol = ['!','.',',','"',"'"];
@@ -29,7 +45,7 @@ function pwFunc() {
 };
 
 // 비밀번호 확인 체크
-function pwChkFunc() {
+function pwChkConditionChk() {
     let pwChkError = document.querySelector('.pwChkArea').querySelector('.error');
 
     pwChkError.textContent = '비밀번호가 맞지 않습니다.';
@@ -41,7 +57,7 @@ function pwChkFunc() {
 };
 
 // 휴대폰번호 체크
-function phoneNumFunc() {
+function phoneNumConditionChk() {
     let phoneNumError = document.querySelector('.phoneNumArea').querySelector('.error');
     let phoneNumCondition = /^01[0-9]{8,9}$/; // 숫자만, 010/011.. 지원, 010-123-4567 지원
 
