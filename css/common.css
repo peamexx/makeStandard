@@ -16,6 +16,30 @@
   font-weight: bold;
 }
 
+.material-icons {
+  font-family: 'Material Icons' !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  -webkit-font-feature-settings: 'liga';
+          font-feature-settings: 'liga';
+}
+
 .error {
   display: none;
   margin-top: 10px;
@@ -139,7 +163,7 @@ html, body {
 
 #join {
   width: 100%;
-  height: 100%;
+  height: 1000px;
   background-color: #efefef;
   position: relative;
 }
@@ -260,8 +284,120 @@ html, body {
   right: -16px;
 }
 
+#join .inner .content > div form fieldset .termsArea {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+#join .inner .content > div form fieldset .termsArea label {
+  width: 100%;
+}
+
+#join .inner .content > div form fieldset .termsArea label a {
+  color: #0e7afe;
+  font-size: 0.8rem;
+}
+
+#join .inner .content > div form fieldset .termsArea input {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 8px;
+  right: 20px;
+}
+
+#join .inner .content > div form fieldset .termsArea input:checked {
+  background-color: #0e7afe;
+}
+
+#join .inner .content > div form fieldset .termsSeperate {
+  padding-left: 30px;
+}
+
+#join .inner .content > div form fieldset .termsSeperate label {
+  position: relative;
+}
+
+#join .inner .content > div form fieldset .termsSeperate label:after {
+  content: '■';
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: -10px;
+}
+
+#join .inner .content > div form fieldset .termsSeperate .terms1 {
+  top: 8px;
+}
+
+#join .inner .content > div form fieldset .termsSeperate .terms2 {
+  top: 44px;
+}
+
+#join .inner .content > div form fieldset .termsSeperate .terms3 {
+  top: 80px;
+}
+
 #join .inner .content > div form fieldset .error {
   margin-left: 155px;
+}
+
+#join .inner .termsDes {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#join .inner .termsDes .content {
+  width: 500px;
+  padding: 50px 20px 0;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#join .inner .termsDes .content > div {
+  height: 500px;
+  padding: 0 20px 0 10px;
+  overflow-y: scroll;
+}
+
+#join .inner .termsDes .content > div h4 {
+  margin-bottom: 30px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+#join .inner .termsDes .content > div b {
+  display: block;
+  font-weight: bold;
+}
+
+#join .inner .termsDes .content > div p {
+  text-align: justify;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  text-align: justify;
+  word-break: keep-all;
+}
+
+#join .inner .termsDes .content .closeBtn {
+  display: block;
+  width: 100%;
+  padding: 20px 10px;
+  background-color: #efefef;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 #board {
